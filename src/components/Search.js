@@ -38,6 +38,9 @@ const InputBox = styled.div`
   border-radius: 4px;
   display: flex;
   width: 400px;
+  @media (max-width: 600px) {
+    width: 250px;
+  }
 `;
 
 const Input = styled.input`
