@@ -52,9 +52,10 @@ const Gist = ({ gist }) => {
 }
 
 const Container = styled.div`
-  width: 600px;
+  max-width: 600px;
   margin: 1rem auto;
   border-bottom: 1px solid #cccccc;
+  padding: 0 10px;
 `;
 
 const Image = styled.img`
@@ -67,6 +68,9 @@ const InformationBar = styled.div`
 display: flex;
 width: 100%;
 justify-content: space-between;
+@media (max-width: 620px) {
+  flex-direction: column;
+}
 `;
 
 const ImageTextDiv = styled.div`
@@ -95,6 +99,7 @@ font-weight: bold;
 
 const DescParas = styled.div`
 font-size: 1.2rem;
+overflow-wrap: break-word;
 `;
 
 const FileNames = styled.div`
@@ -104,6 +109,12 @@ color: #1B73DA;
 font-size: 0.7rem;
 font-weight: bold;
 margin: 1rem 0;
+overflow-wrap: break-word;
+
+@media (max-width: 600px) {
+  flex-direction: column;
+  gap: 0.2rem;
+}
 `;
 
 export default Gist;

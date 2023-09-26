@@ -32,6 +32,9 @@ const UserIcons = styled.div`
 display: flex;
 gap: 1rem;
 width: 100%;
+@media (max-width: 620px) {
+  margin-top: 1rem;
+}
 `;
 
 const TextIcons = styled.div`
