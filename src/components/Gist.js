@@ -3,28 +3,23 @@ import GistUserIcons from "./GistUserIcons";
 
 const Gist = ({ gist }) => {
 
-    // Convert the input date string into a Date object
-    const createdAtObj = new Date(gist.created_at);
-
-    // Format the date as MM/DD/YYYY
-    const created_at = createdAtObj.toLocaleDateString('en-US', {
+  function formatDateToMMDDYYYY(dateString) {
+    const dateObj = new Date(dateString);
+  
+    const options = {
       year: 'numeric',
       month: '2-digit',
       day: '2-digit',
-    });
+    };
+  
+    return dateObj.toLocaleDateString('en-US', options);
+  }
+  
+  const created_at = formatDateToMMDDYYYY(gist.created_at);
+  const updated_at = formatDateToMMDDYYYY(gist.updated_at);
 
-     // Convert the input date string into a Date object
-        const updatedAtObje = new Date(gist.updated_at);
-
-      // Format the date as MM/DD/YYYY
-        const updated_at = updatedAtObje.toLocaleDateString('en-US', {
-          year: 'numeric',
-          month: '2-digit',
-          day: '2-digit',
-        });
-
-        const totalFiles = Object.keys(gist.files).length;
-        const filenames = Object.keys(gist.files);
+   const totalFiles = Object.keys(gist.files).length;
+   const filenames = Object.keys(gist.files);
 
   return (
     <Container>
